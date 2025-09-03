@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "jetson-camera-project/recorder v1.0",
+  "generation_timestamp": "1756934855039",
+  
+  "recording_session": {
+    "device_id": "JON001",
+    "camera_name": "eCAM25",
+    "camera_id": "1",
+    "video_index": "216973",
+    "profile": "640x400_120fps_8bit",
+    "timestamp_start": 1756934792840,
+    "timestamp_end": 1756934855039,
+    "duration_ms": 62199,
+    "synchronized_recording": true,
+    "correlation_id": "JON001_216973_1756934792840"
+  },
+  
+  "video_stream": {
+    "codec": "H.264",
+    "container": "Matroska",
+    "encoder": "x264enc",
+    "encoder_settings": "bitrate=10000 speed-preset=fast tune=zerolatency",
+    "resolution": {
+      "width": 640,
+      "height": 480,
+      "pixel_format": "I420",
+      "aspect_ratio": "1.333"
+    },
+    "temporal": {
+      "framerate_nominal": 120,
+      "framerate_actual": "119.98",
+      "total_frames": 7463,
+      "frame_duration_ms": "8.33"
+    },
+    "quality": {
+      "bit_depth": 8,
+      "chroma_subsampling": "4:2:0"
+    }
+  },
+  
+  "camera_parameters": {
+    "sensor": {
+      "model": "AR0234",
+      "manufacturer": "onsemi",
+      "native_resolution": "1920x1200",
+      "pixel_size_um": 3.0,
+      "active_area": {
+        "width": 640,
+        "height": 480
+      }
+    },
+    "lens": {
+      "model": "e-CAM25_CUONX",
+      "focal_length_mm": "PLACEHOLDER: 3.6",
+      "f_number": "PLACEHOLDER: f/2.8",
+      "field_of_view": {
+        "horizontal_deg": "PLACEHOLDER: 66",
+        "vertical_deg": "PLACEHOLDER: 53",
+        "diagonal_deg": "PLACEHOLDER: 82"
+      },
+      "distortion_model": "brown_conrady",
+      "distortion_coefficients": {
+        "k1": "PLACEHOLDER: -0.123",
+        "k2": "PLACEHOLDER: 0.045", 
+        "k3": "PLACEHOLDER: -0.012",
+        "p1": "PLACEHOLDER: 0.001",
+        "p2": "PLACEHOLDER: 0.002",
+        "description": "Radial (k1,k2,k3) and tangential (p1,p2) distortion coefficients for lens correction"
+      }
+    },
+    "isp_settings": {
+      "exposure_mode": "auto",
+      "exposure_time_us": "PLACEHOLDER: variable",
+      "gain_db": "PLACEHOLDER: variable", 
+      "white_balance": {
+        "mode": "auto",
+        "r_gain": "PLACEHOLDER: variable",
+        "g_gain": "PLACEHOLDER: variable",
+        "b_gain": "PLACEHOLDER: variable"
+      },
+      "color_correction_matrix": "PLACEHOLDER: 3x3 matrix",
+      "gamma": "PLACEHOLDER: 2.2"
+    }
+  },
+  
+  "synchronization": {
+    "master_camera": false,
+    "sync_method": "software_timestamp",
+    "sync_accuracy_ms": "PLACEHOLDER: <1.0",
+    "trigger_mode": "free_run",
+    "frame_correlation": {
+      "description": "Frames can be correlated across cameras using timestamp_start + (frame_number * frame_duration_ms)",
+      "frame_numbering": "0-indexed, starts at recording_session.timestamp_start"
+    }
+  },
+  
+  "frame_analysis_support": {
+    "frame_extraction": {
+      "method": "ffmpeg -i video.mkv -vf select='eq(n,FRAME_NUMBER)' -vframes 1 frame_%06d.png",
+      "timestamp_calculation": "timestamp_ms = recording_session.timestamp_start + (frame_number * video_stream.temporal.frame_duration_ms)"
+    },
+    "frame_metadata": {
+      "available": false,
+      "per_frame_data": "PLACEHOLDER: exposure_time, gain, temperature, timestamp_precise",
+      "description": "Future enhancement: per-frame ISP settings and sensor data for frame-accurate analysis"
+    }
+  },
+  
+  "system_telemetry": {
+    "platform": "",
+    "jetpack_version": "PLACEHOLDER: 6.1.0",
+    "power_profile": "MAXN",
+    "jetson_clocks": true,
+    "thermal": {
+      "cpu_temp_start_c": "51,625",
+      "gpu_temp_start_c": "51,5",
+      "temp_monitoring": "PLACEHOLDER: continuous thermal logging during recording",
+      "description": "System temperatures for correlation with video quality degradation"
+    },
+    "performance": {
+      "cpu_usage_avg": "PLACEHOLDER: monitor during recording",
+      "gpu_usage_avg": "PLACEHOLDER: monitor during recording", 
+      "memory_usage_mb": "PLACEHOLDER: peak memory usage",
+      "storage_write_speed_mbps": "PLACEHOLDER: measured write performance"
+    }
+  },
+  
+  "file_metadata": {
+    "video_file": "JON001_eCAM25_AR0234_1_216973_1756934792840.mkv",
+    "size_bytes": 30778117,
+    "checksum": {
+      "algorithm": "PLACEHOLDER: SHA256",
+      "value": "PLACEHOLDER: computed hash for integrity verification"
+    },
+    "creation_time_iso": "2025-09-04T00:26:32+03:00",
+    "timezone": "Europe/Kyiv"
+  },
+  
+  "validation": {
+    "frame_count_verified": false,
+    "duration_verified": false, 
+    "description": "Post-processing validation flags for QA pipeline"
+  }
+}

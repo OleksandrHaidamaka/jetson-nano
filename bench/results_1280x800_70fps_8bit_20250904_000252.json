@@ -1,0 +1,42 @@
+{
+  "fps_performance": {
+    "target_fps": 70,
+    "cameras": [
+      {
+        "camera_id": 0,
+        "avg_fps": 28.40,
+        "min_fps": 6.9,
+        "max_fps": 35.3,
+        "fps_variance": 18.61
+      },
+      {
+        "camera_id": 1,
+        "avg_fps": 29.52,
+        "min_fps": 6.9,
+        "max_fps": 35.5,
+        "fps_variance": 21.67
+      }
+    ]
+  },
+  
+  "cpu_performance": {
+    "temperature_avg_c": 53.41,
+    "utilization_avg_percent": 95.02
+  },
+  
+  "gpu_performance": {
+    "temperature_avg_c": 52.38,
+    "utilization_avg_percent": 3.00
+  },
+  
+  "memory_utilization": {
+    "emc_usage_percent": 13.8,
+    "ram_usage_percent": 13.26
+  },
+  
+  "file_sizes": {
+    "camera0_bytes": 13323618,
+    "camera1_bytes": 13902455,
+    "total_bytes": 27226073
+  }
+}
